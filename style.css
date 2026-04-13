@@ -1,0 +1,187 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+#mr-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  overflow: hidden;
+  color: var(--uxp-host-text-color, #e0e0e0);
+}
+
+.section-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+  margin-bottom: 4px;
+}
+
+/* ── Add section ── */
+#add-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+#add-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+#add-row select { flex: 0 0 auto; }
+#comment-input { flex: 1; }
+
+/* Native select */
+select {
+  height: 30px;
+  padding: 0 8px;
+  background: var(--uxp-host-input-background-color, #2a2a2a);
+  color: var(--uxp-host-text-color, #e0e0e0);
+  border: 1px solid var(--uxp-host-border-color, #4a4a4a);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: auto;
+  flex: 1;
+}
+select:focus { outline: 1px solid var(--uxp-host-link-color, #4a90e2); }
+
+/* ── List section ── */
+#list-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+#filter-bar {
+  display: flex;
+  gap: 4px;
+  padding: 5px 6px;
+  border-bottom: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  flex-shrink: 0;
+}
+#filter-bar select { height: 26px; font-size: 11px; }
+
+#list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 6px 3px 8px;
+  border-bottom: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  flex-shrink: 0;
+}
+#list-toolbar-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
+
+#list-header {
+  display: flex;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+  border-bottom: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  flex-shrink: 0;
+}
+#list-header span:nth-child(1) { flex: 0 0 62px; }
+#list-header span:nth-child(2) { flex: 0 0 100px; }
+#list-header span:nth-child(3) { flex: 1; }
+#list-header span:nth-child(4) { flex: 0 0 28px; }
+
+#comments-list { flex: 1; overflow-y: auto; }
+
+.comment-row {
+  display: flex;
+  gap: 4px;
+  padding: 5px 8px;
+  align-items: center;
+  border-bottom: 1px solid var(--uxp-host-border-color, #2a2a2a);
+  cursor: pointer;
+}
+.comment-time  { flex: 0 0 62px; }
+.comment-cat   { flex: 0 0 100px; }
+.comment-text  { flex: 1; min-width: 0; }
+.comment-check { flex: 0 0 28px; }
+.comment-row:hover { background: rgba(255,255,255,0.05); }
+.comment-row.done  { opacity: 0.4; }
+
+.comment-time {
+  font-family: monospace;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.comment-cat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  overflow: hidden;
+}
+.cat-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.comment-text {
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.comment-check { width: 28px; flex-shrink: 0; display: flex; justify-content: center; }
+
+#empty-state {
+  padding: 20px;
+  text-align: center;
+  opacity: 0.4;
+  font-size: 11px;
+}
+
+/* ── Stats section ── */
+#stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--uxp-host-border-color, #3a3a3a);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.readiness-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  padding-top: 6px;
+  border-top: 1px solid var(--uxp-host-border-color, #3a3a3a);
+}
+.readiness-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4a90e2;
+}
